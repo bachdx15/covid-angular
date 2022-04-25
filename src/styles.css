@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  background-color: #cbcbcf;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-paginator-page-size {
+  display: none !important;
+}
+
+.mat-paginator-container {
+  background-color: #fff;
+  color: #343a40;
+}
+.leaflet-interactive{
+  stroke: rgb(252, 140, 159) ;
+  opacity: 0.5;
+  fill: rgb(247, 111, 134) !important;
+
+}
+@media screen and(max-width:768px) {
+    .item{
+        width: 40%;
+        margin-top: 20px;
+      }
+    .more{
+      flex-direction: column;
+    }
+    .linechart{
+      width: 100%;
+    }
+}

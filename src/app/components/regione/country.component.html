@@ -1,0 +1,27 @@
+<div class="country-selected">
+  <select name="region" [(ngModel)]="selectedReg">
+    <option
+      [selected]="item.countryregion == 'Vietnam'"
+      *ngFor="let item of listRegion"
+      [value]="item.countrycode?.iso2"
+    >
+      {{ item.countryregion }}
+    </option>
+  </select>
+</div>
+<app-weather-app [country]="selectedReg"></app-weather-app>
+<div class="region">
+  <h4>Country Map</h4>
+  <div class="map-contain">
+    <app-map [data]="selectedReg"></app-map>
+  </div>
+  <div class="total">
+    <app-regional-list [data]="selectedReg"></app-regional-list>
+  </div>
+</div>
+
+<div class="more">
+  <app-line-chart class="linechart" [data]="selectedReg"></app-line-chart>
+
+  <app-dash-board class="dash-board"></app-dash-board>
+</div>

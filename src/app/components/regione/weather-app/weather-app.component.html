@@ -1,0 +1,42 @@
+<div class="contain">
+  <div class="box" [ngStyle]="{'background': 'url(' + imgLink + ')','background-size':'100%'}  " >
+    <div class="statistic">
+      <div class="wrap">
+        <div>
+          <span>{{celius}}<span>&deg; </span></span>
+          <span class="name">{{country?.countryregion}}</span>
+        </div>
+
+        <div class="status">
+            <ng-container *ngIf="weatherData?.weather[0].main=='Clouds'">
+                <i class="fad fa-cloud"></i>
+                <p>Cloudy</p>
+            </ng-container>
+            <ng-container *ngIf="weatherData?.weather[0].main=='Rain'">
+                <i class="fas fa-cloud-drizzle"></i>
+                <p>Rain</p>
+            </ng-container>
+            <ng-container *ngIf="weatherData?.weather[0].main=='Clear'">
+                <i class="fad fa-sun"></i>
+                <p>Clear</p>
+            </ng-container>
+          
+        </div>
+      </div>
+    </div>
+    <div class="detail">
+      <div class="title">
+        <p>Wind details:</p>
+        <p> <span>Deg:</span> <span>{{weatherData?.wind.deg}}</span></p>
+        <p> <span>Gust:</span> <span>{{weatherData?.wind.gust}}</span></p>
+        <p> <span>Speed:</span> <span>{{weatherData?.wind.speed}}</span></p>
+      </div>
+      <div class="title">
+        <p>Main details:</p>
+        <p> <span>Sea level:</span> <span>{{weatherData?.main.sea_level}}</span></p>
+        <p> <span>Pressure:</span> <span>{{weatherData?.main.pressure}}</span></p>
+        <p> <span>Humidity:</span> <span>{{weatherData?.main.humidity}}</span></p>
+      </div>
+    </div>
+  </div>
+</div>
